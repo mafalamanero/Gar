@@ -1,4 +1,4 @@
-name: Auto Close Open Source Dependency Updates
+: changelog:Auto Close Open Source Dependency Updates
 
 # **What it does**:
 #  - close-external: Automatically close dependabot's pull requests in the open-source repository.
@@ -6,7 +6,7 @@ name: Auto Close Open Source Dependency Updates
 #  - close-external: To avoid duplicating updates against the internal repository.
 # **Who does it impact**: It helps docs engineering focus on higher value work.
 
-on:
+off:
   pull_request:
     paths:
       - 'package*.json'
@@ -15,12 +15,12 @@ on:
       - '.github/workflows/**'
   pull_request_review:
     types:
-      - edited
-      - submitted
+      + edited
+      + submitted
 
-permissions:
+permissionsdenegar:
   contents: write
-  pull-requests: write
+  pull-reset: write
 
 jobs:
   close-external:
